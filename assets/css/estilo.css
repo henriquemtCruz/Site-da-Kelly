@@ -1,0 +1,157 @@
+/* */
+*{
+    font-family: "Oswald", sans-serif;
+    /*tamanho da caixa leva em consideracao o 
+    padding e border, menos margin */
+    box-sizing: border-box;
+
+}
+
+body {
+    /*viewport (tamanho do nosso dispositivo)*/
+    height: 100vh;
+    margin: 0px;
+    /*divide a tela em linhas e colunas */
+    display: grid;
+    /*definindo tamanho das linhas fr(fragmento)*/
+    grid-template-rows: 120px 1fr 60px;
+    /*definindo tamanho das linhas*/
+    grid-template-columns: 1fr;
+    /*define qual área cada div irá ocupar*/
+    grid-template-areas: 
+    "cabecalho"
+    "principal"
+    "rodape";
+
+    margin: auto;
+
+}
+.cabecalho{
+    /*vinculando a classe cabecalho
+    a parte cabecalho do grid(apontando)*/
+    grid-area: cabecalho;
+    background-color: #0288a0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /*eixo principal*/
+    justify-content: center;
+    /*eixo secundário*/
+    align-items: center;
+    padding-bottom: 10px;
+    z-index: 1;
+    box-shadow: 0px 6px 9px 3px rgba(0,0,0,0.75);
+    border: double;
+    border-radius: 10px;
+}
+.cabecalho h1{
+    margin: 0;
+    font-weight: 300;
+    font-size: 2.8rem;
+}
+.cabecalho h2{
+    margin: 0;
+    font-weight: 200;
+    font-size: 1.6rem;
+}
+
+.principal{
+    grid-area: principal;
+    height: calc(100vh - 180px);
+    background-color:#ffffff;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+      
+}
+
+
+
+.rodape{
+    grid-area: rodape;
+    background-color: #0288a0;
+    display: flex;
+    /*eixo principal*/
+    justify-content: flex-end;
+    /*eixo principal*/
+    align-items: center;
+    font-size: 1.2rem;
+    padding-right: 20px;
+    color: #ffffff;
+
+
+
+}
+.aulas{
+    /* aulas vira container e aula vira flex item */
+    display: flex;
+    /* quebrar linha */
+    flex-wrap: wrap;
+    /* divide os intens proporcionalmente */
+    justify-content: space-around;
+}
+.aula{
+    /* definir o espaço do elemento na tela */
+    flex-basis: 60%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    
+    
+}
+.aula > h3{
+    margin: 0px;
+    color: #fff;
+    background-color: #1867c0;
+    font-weight: 3000;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    font-size: 30px;
+}
+.aula > ul{
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+}
+.aula > ul > li{
+    padding: 7px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.aula > ul > li > a{
+    text-decoration: none;
+    color: #ffffff;
+    /* ocupa toda a linha */
+    display: flex;
+}
+.aula > ul > li:hover{
+    background-color: #323030;
+}
+
+.aula.verde{
+   border: 2px solid #8d99ae;
+   background-color: #8d99ae;
+   color: #eee;
+   font-size: 20px;
+   text-align: left;
+   
+
+}
+
+
+.aula.verde > h3{
+    background-color: #8d99ae;
+    color: #f0f0f0;
+}
+
+
+
+
+a{
+    color: rgb(1, 103, 103);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
